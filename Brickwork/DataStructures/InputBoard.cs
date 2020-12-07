@@ -12,30 +12,42 @@ namespace Brickwork.DataStructures
             for (int i = 0; i < BoardX; i++)
             {
                 int[] inpurRow = userInput[i].Split(" ").Select(a => int.Parse(a)).ToArray();//Parses string into int array
-                for (int j = 0; j < BoardY; j++)
+                for (int j = 0; j < inpurRow.Length; j++)
                 {
-                    BoardData[i, j] = inpurRow[j];
+                    try
+                    {
+                        BoardData[i, j] = inpurRow[j];
+                    }
+                    catch (IndexOutOfRangeException)
+                    {
+
+                        throw new Exception("Brick out of range");
+                    }
                 }
             }
             Validate();
         }
         
-        private void Validate() //Validates if there is any brick that is 3 long or high
+        private void Validate() //Validates if there is any brick that is 3 long or high or if there are holes
         {
             for (int i = 0; i < BoardX; i++)
             {
                 for (int j = 0; j < BoardY; j++)
                 {
+                    if (BoardData[i,j]==0)
+                    {
+                        throw new Exception("Invalid brick placement");
+                    }
                     if (i+2<BoardX)
                     {
-                        if (BoardData[i,j]==BoardData[i+2,j])
+                        if (BoardData[i,j]==BoardData[i+2,j] && BoardData[i, j]==BoardData[i + 1, j])
                         {
                             throw new Exception("Brick to big");
                         }
                     }
                     if (j+2<BoardY)
                     {
-                        if (BoardData[i,j]==BoardData[i,j+2])
+                        if (BoardData[i,j]==BoardData[i,j+2] && BoardData[i, j] == BoardData[i, j + 1])
                         {
                             throw new Exception("Brick to big");
                         }

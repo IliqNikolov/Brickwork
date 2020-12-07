@@ -12,7 +12,7 @@ namespace Brickwork.DataStructures
 
         public string[] ReturnBoard()//Return each board row as a string in a string array
         {
-            string[] output = new string[BoardY];//Contains the string that will be outputed
+            string[] output = new string[BoardX];//Contains the string that will be outputed
             StringBuilder outputRow = new StringBuilder();//Contains the current row
             for (int i = 0; i < BoardX; i++)
             {
@@ -28,7 +28,7 @@ namespace Brickwork.DataStructures
 
         public string[] ReturnFancyBoard() //Return each board row as a string in a string array where each brick is surrounded with "*"
         {
-            string[] output = new string[BoardY*2+1];//Contains the string that will be outputed
+            string[] output = new string[BoardX*2+1];//Contains the string that will be outputed
             output[0] = new string('*', BoardY * 2 + 1);
             StringBuilder outputTopRow = new StringBuilder();//Contains the current top row
             StringBuilder outputBottomRow = new StringBuilder();//Contains the current bottom row

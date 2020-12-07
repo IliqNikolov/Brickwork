@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Brickwork.Logic;
+using Brickwork.User_Interface;
+using System;
 
 namespace Brickwork
 {
@@ -6,7 +8,8 @@ namespace Brickwork
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Logic.Brickwork brickwork = new Logic.Brickwork();//Creates an instance of the main logic class
+            brickwork.Run(new UserData());
         }
     }
 }
