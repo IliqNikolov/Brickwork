@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Brickwork.Boards
+namespace Brickwork.DataStructures
 {
-    public class OutputBoard :BaseBoard
+    public class OutputBoard :BaseBoard //Class to hold the out board
     {
         public OutputBoard(int x, int y) : base(x, y)//Creats X*Y board
         {
@@ -12,8 +12,8 @@ namespace Brickwork.Boards
 
         public string[] ReturnBoard()//Return each board row as a string in a string array
         {
-            string[] output = new string[BoardY];
-            StringBuilder outputRow = new StringBuilder();
+            string[] output = new string[BoardY];//Contains the string that will be outputed
+            StringBuilder outputRow = new StringBuilder();//Contains the current row
             for (int i = 0; i < BoardX; i++)
             {
                 for (int j = 0; j < BoardY; j++)
