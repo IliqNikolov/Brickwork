@@ -26,14 +26,14 @@ namespace Brickwork.DataStructures
             {
                 for (int j = 0; j < BoardY; j++)
                 {
-                    if (i+2<=BoardX)
+                    if (i+2<BoardX)
                     {
                         if (BoardData[i,j]==BoardData[i+2,j])
                         {
                             throw new Exception("Brick to big");
                         }
                     }
-                    if (j+2<=BoardY)
+                    if (j+2<BoardY)
                     {
                         if (BoardData[i,j]==BoardData[i,j+2])
                         {
