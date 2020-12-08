@@ -9,7 +9,7 @@ On the next N lines M numbers separated by a space must be inputted representing
 ## Output
 The new layer will be described in N lines with M numbers in each.
 
-If the "fancybricks" in "config.cs" is true each brick will be surrounded by "*".
+If the "IsFancyOutputActive" in "config.cs" is true each brick will be surrounded by "*".
 
 ## Solution
 The board is split into 2x2 squares.If a square contains a "horizontal" brick its replaced with a square containing 2 "vertical" brick.If not its replaced with a square containing 2 "horizontal".
